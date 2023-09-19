@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+    <body>
+        <figure>
+            <img src="/img/logo-DH.png" alt="Logo Digital House">
+        </figure>
+        <h1 class="titulo">Agregar Película</h1>
+        <br>
+        <section class="formulario">
+            <form class="form-inline" action="/movies/create" method="POST">
+                <div class="form-group">
+                    <label class="sr-only" for="title">Title </label>
+                    <input class="form-control" type="text" name="title" id="title">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="rating">Rating </label>
+                    <input class="form-control" type="number" name="rating" id="rating">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="awards">Awards </label>
+                    <input class="form-control" type="number" name="awards" id="awards">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="release_date">Release date </label>
+                    <input class="form-control" type="date" name="release_date" id="release_date">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="length">Length </label>
+                    <input class="form-control" type="number" name="length" id="length">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="genre">Géneros</label>
+                    <select class="form-control" name="genre" id="genre">
+                        <option value="" hidden selected>selecciona...</option>
+                        <% allGenres.forEach(genre=> { %>
+                            <option value="<%= genre.id %> ">
+                                <%= genre.name %>
+                            </option>
+                            <% }) %>
+                    </select>
+                </div>
+                <div class="cols-4 mt-3">
+                    <button class="btn btn-info" type="submit">Agregar</button>
+                    <a class="btn btn-info" href="/">Inicio</a>
+                </div>
+                
+            </form>
+        </section>
+
+
+
+
+        <!-- SCRIPT-BOOTSTRAP -->
+        <%- include('./partials/script') %>
+    </body>
+
+</html>

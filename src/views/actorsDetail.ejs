@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+    <body>
+        <figure>
+            <img src="/img/logo-DH.png" alt="Logo Digital House">
+        </figure>
+        <a class="btn btn-info" href="/actors">Actors</a></p>
+        <h1>
+            <%= actor.first_name %>,<%= actor.last_name %>
+        </h1>
+        
+        <% if (actor.movies.length) { %>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name Movie:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <% actor.movies.forEach(movie=> { %>
+                                <a href="/movies/detail/<%= movie.id %> ">
+                                    <%= movie.title %>
+                                </a>
+                                <% }) %>
+                        </td>
+                    </tr>
+                </tbody>
+
+
+                <% }else{ %>
+                    <p>el actor no tiene películas</p>
+                    <% } %>
+            </table>
+
+
+            <!-- SCRIPT-BOOTSTRAP -->
+            <%- include('./partials/script') %>
+    </body>
+
+</html>

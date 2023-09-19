@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+    <body>
+        <figure>
+            <img src="/img/logo-DH.png" alt="Logo Digital House">
+        </figure>
+        <a class="btn btn-info" href="/">inicio</a></p>
+        <h1>LISTADO DE ACTORES</h1>
+        <ul>
+            <% for( let i=0; i < actors.length; i++ ) { %>
+                <th scope="col">Name Actor:</th>
+                <table class="table table-striped">
+                    <td><a href="/actors/detail/<%= actors[i].id %>">
+                            <%= actors[i].first_name %>
+                                <%= actors[i].last_name %>
+                        </a></td>
+                </table>
+                <% } %>
+        </ul>
+        <br>
+        <a class="botonVolver" href="/">INDEX</a>
+
+        <!-- SCRIPT-BOOTSTRAP -->
+        <%- include('./partials/script') %>
+    </body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<%- include('./partials/head') %>
+
+    <body>
+        <figure>
+            <img src="/img/logo-DH.png" alt="Logo Digital House">
+        </figure>
+        <a class="btn btn-info" href="/">inicio</a></p>
+        <h1>LISTADO DE GENEROS</h1>
+        <ul>
+            <% for( let i=0; i < genres.length; i++ ) { %>
+                <th scope="col">Name Genre:</th>
+                <table class="table table-striped">
+                    <td><a href="/genres/detail/<%= genres[i].id %>">
+                            <%= genres[i].name %>
+                        </a></td>
+                </table>
+                <% } %>
+
+        </ul>
+
+
+        <!-- SCRIPT-BOOTSTRAP -->
+        <%- include('./partials/script') %>
+    </body>
+
+</html>
