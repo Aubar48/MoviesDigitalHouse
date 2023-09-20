@@ -8,7 +8,12 @@
         <figure>
             <img src="/img/logo-DH.png" alt="Logo Digital House">
         </figure>
-        <h1 class="titulo">Agregar Película</h1>
+        <div class="cols-4 mt-3">
+            <button class="btn btn-info" type="submit">Add</button>
+            <a class="btn btn-info" href="/">Home</a>
+            <a class="btn btn-info" href="/movies">Movies List</a>
+        </div>
+        <h1 class="titulo">Add Movie</h1>
         <br>
         <section class="formulario">
             <form class="form-inline" action="/movies/create" method="POST">
@@ -33,9 +38,9 @@
                     <input class="form-control" type="number" name="length" id="length">
                 </div>
                 <div class="form-group">
-                    <label class="sr-only" for="genre">Géneros</label>
+                    <label class="sr-only" for="genre">Genres</label>
                     <select class="form-control" name="genre" id="genre">
-                        <option value="" hidden selected>selecciona...</option>
+                        <option value="" hidden selected>Select...</option>
                         <% allGenres.forEach(genre=> { %>
                             <option value="<%= genre.id %> ">
                                 <%= genre.name %>
@@ -43,11 +48,8 @@
                             <% }) %>
                     </select>
                 </div>
-                <div class="cols-4 mt-3">
-                    <button class="btn btn-info" type="submit">Agregar</button>
-                    <a class="btn btn-info" href="/">Inicio</a>
-                </div>
-                
+
+
             </form>
         </section>
 

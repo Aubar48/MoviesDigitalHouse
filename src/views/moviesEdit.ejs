@@ -8,7 +8,7 @@
         <figure>
             <img src="/img/logo-DH.png" alt="Logo Digital House">
         </figure>
-        <h1 class="titulo">Película a Editar: <%= Movie.title %>
+        <h1 class="titulo">Movie At Edit: <%= Movie.title %>
         </h1>
         <section class="formulario">
             <form action="/movies/update/<%= Movie.id %>?_method=PUT" method="POST">
@@ -24,7 +24,7 @@
                 <label for="length">Length </label>
                 <p><input type="number" name="length" id="" value="<%= Movie.length %>" required></p>
                 <br>
-                <button class="btn btn-info" type="submit">Actualizar</button>
+                <button class="btn btn-info" type="submit">Update</button>
                 <a class="btn btn-info" href="/movies">Movies</a></p>
                 
             </form>

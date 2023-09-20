@@ -15,20 +15,24 @@
             <tbody>
                 <thead>
                     <tr>
-                      <th scope="col">RATING:</th>
-                      <th scope="col">AWARDS:</th>
-                      <th scope="col">LENGTH:</th>
-                      <th scope="col">RELEASE DATE:</th>
+                        <th scope="col">RATING:</th>
+                        <th scope="col">AWARDS:</th>
+                        <th scope="col">LENGTH:</th>
+                        <th scope="col">RELEASE DATE:</th>
                     </tr>
-                  </thead>
+                </thead>
                 <tr>
-                    <td> <%= movie.rating %>
+                    <td>
+                        <%= movie.rating %>
                     </td>
-                    <td> <%= movie.awards %>
+                    <td>
+                        <%= movie.awards %>
                     </td>
-                    <td> <%= movie.length + ' min' %>
+                    <td>
+                        <%= movie.length + ' min' %>
                     </td>
-                    <td> <%= movie.release_date %>
+                    <td>
+                        <%= movie.release_date %>
                     </td>
                 </tr>
             </tbody>
@@ -36,10 +40,10 @@
         </table>
 
 
-        <a class="btn btn-info" href="/movies/edit/<%= movie.id %> ">Editar</a>
-        <a class="btn btn-danger" href="/movies/delete/<%= movie.id %> ">Eliminar</a>
-        <a class="btn btn-info" href="/movies">Movies</a></p>
-
+        <a class="btn btn-info" href="/movies/edit/<%= movie.id %> ">Edit</a>
+        <a class="btn btn-danger" href="/movies/delete/<%= movie.id %> ">Delete</a>
+        <a class="btn btn-info" href="/movies">Back Movies List</a></p>
+        
         <!-- SCRIPT-BOOTSTRAP -->
         <%- include('./partials/script') %>
     </body>
