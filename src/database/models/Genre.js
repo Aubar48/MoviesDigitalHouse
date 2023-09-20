@@ -15,7 +15,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         ranking: {
             type: dataTypes.BIGINT(10).UNSIGNED,
-            allowNull: false
+            allowNull: false,
+            unique:true
         },
         active: {
             type: dataTypes.BOOLEAN,

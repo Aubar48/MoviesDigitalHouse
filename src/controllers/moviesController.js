@@ -20,7 +20,7 @@ const moviesController = {
             order: [
                 ['release_date', 'DESC']
             ],
-            limit: 5
+            limit: 15
         })
             .then(movies => {
                 res.render('newestMovies', { movies });
@@ -30,7 +30,7 @@ const moviesController = {
     recomended: (req, res) => {
         db.Movie.findAll({
             where: {
-                rating: { [db.Sequelize.Op.gte]: 8 }
+                rating: { [db.Sequelize.Op.gte]: 6 }
             },
             order: [
                 ['rating', 'DESC']
